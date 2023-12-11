@@ -8,28 +8,47 @@ Experiment No. 9 : Write a Python Program to compute following computation on ma
                    d)Transpose of a matix
 '''
 
-import numpy
+X = [[12,7,3],
+[4 ,5,6],
+[7 ,8,9]]
 
-# initializing matrices
-x = numpy.array([[1, 2], [4, 5]])
-y = numpy.array([[7, 8], [9, 10]])
+Y = [[5,8,1],
+[6,7,3],
+[4,5,9]]
 
-# using add() to add matrices
-print("The element wise addition of matrix is : ")
-print(numpy.add(x, y))
+result = [[0,0,0],
+[0,0,0],
+[0,0,0]]
 
-# using subtract() to subtract matrices
-print("The element wise subtraction of matrix is : ")
-print(numpy.subtract(x, y))
+#addition of two matirx
+for i in range(len(X)):
+  for j in range(len(X[0])):
+    result[i][j] = X[i][j] + Y[i][j]
+print("Addition of two matrices is :")
+for r in result:
+   print(r)
 
-# using dot() to multiply matrices
-print ("The product of matrices is : ")
-print (numpy.dot(x,y))
-
-
-# using "T" to transpose the matrix
-print("The transpose of given matrix is : ")
-print(x.T)
-
-
-# Created by ATHARVA PAWAR
+#subtraction of matrix
+for i in range(len(X)):
+  for j in range(len(X[0])):
+    result[i][j] = X[i][j] -  Y[i][j]
+print("Subtraction of two matrices is :")
+for r in result:
+   print(r)
+    
+#multipication of matrix
+for i in range(len(X)):
+  for j in range(len(Y[0])):
+      for k in range(len(Y)):
+         result[i][j] = X[i][k] * Y[k][j]
+print("Multipication of two matrices is :")
+for r in result:
+   print(r)
+    
+#transpose of matirix
+for i in range(len(X)):
+  for j in range(len(X[0])):
+    result[i][j] = X[i][j] 
+print("Transpose of a matrix is :")
+for r in result:
+   print(r)
